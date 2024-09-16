@@ -3,7 +3,7 @@
 # Define variables
 SERVICE_NAME="rtb-server"
 SERVICE_SCRIPT="/etc/init.d/$SERVICE_NAME"
-PORT=80  # Change to the port you want to check, in this case, port 80
+PORT=8080  # Change to the port you want to check, in this case, port 80
 METRICS_FILE="/var/lib/node_exporter/textfile_collector/application_status.prom"
 METRIC_NAME="application_status"
 
