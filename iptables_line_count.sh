@@ -8,8 +8,11 @@ METRIC_NAME="iptables_line_count"
 # Ensure the output directory exists
 mkdir -p $OUTPUT_DIR
 
+# Full path to iptables
+IPTABLES_CMD="/usr/sbin/iptables"
+
 # Count the number of lines in iptables output
-line_count=$(iptables -L | wc -l)
+line_count=$($IPTABLES_CMD -L | wc -l)
 
 # Write the metric in Prometheus exposition format
 echo "# HELP $METRIC_NAME Number of lines in iptables -L output" > $OUTPUT_FILE
